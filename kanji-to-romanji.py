@@ -30,7 +30,7 @@ with open('input/text.csv', encoding='shiftjis') as csvFile:
     
     count = count + 1
     if count == a:
-      print(a)
+      print(F'{a} de 127,356 enderecos')
       a = a + 1000
     
     roman1 = translate(row['7']) if row['7'] == '–kŠC“¹' else insert_dash(row['7'], -1)
@@ -38,9 +38,9 @@ with open('input/text.csv', encoding='shiftjis') as csvFile:
     roman2 = insert_dash(row['8'], -1)
    
     roman3 = translate(row['9']) 
-    kana1 = translate(row['4']) 
-    kana2 = translate(row['5']) 
-    kana3 = translate(row['6']) 
+    kana1 = row['4'] 
+    kana2 = row['5'] 
+    kana3 = row['6'] 
     kanji1 = row['7']
     kanji2 = row['8']
     kanji3 = row['9']
@@ -59,6 +59,7 @@ with open('input/text.csv', encoding='shiftjis') as csvFile:
     }
     data.append(dataOrganizado)
       
-    with open(f'output/end/ende-{count}.json', 'w', encoding='shiftjis') as jsonF:
+    with open(f'output/end/{count}.json', 'w') as jsonF:
         jsonF.write(json.dumps(data, indent=2))
     data.clear()
+print('DONE!')
