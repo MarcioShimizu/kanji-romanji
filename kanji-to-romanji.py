@@ -3,6 +3,7 @@ import pykakasi
 import csv 
 import json
 from tqdm import tqdm
+import argparse
 
 
 def translate(japanese):
