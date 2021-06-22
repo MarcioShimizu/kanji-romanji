@@ -2,7 +2,6 @@
 import pykakasi
 import csv 
 import json
-from time import sleep
 from tqdm import tqdm
 
 
@@ -19,12 +18,14 @@ def insert_dash(string, index):
 
 #---------------------------------------
 
+
 data = []
 count = 0
 print('inicio')
 with open('input/text.csv', encoding='shiftjis') as csvFile:
   csvOpenedFile = csv.DictReader(csvFile)
-  for row in tqdm(csvOpenedFile):
+  lines = 127353
+  for row in tqdm(csvOpenedFile, total=lines):
     count = count + 1
     roman1 = translate(row['7']) if row['7'] == '–kŠC“¹' else insert_dash(row['7'], -1)   
     roman2 = insert_dash(row['8'], -1) 
