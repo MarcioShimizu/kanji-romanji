@@ -52,7 +52,7 @@ with open('input/text.csv', encoding='shiftjis') as csvFile:
     }
     data.append(dataOrganizado)
       
-    with open(f'output/end/{count}.json', 'w') as jsonF:
-        jsonF.write(json.dumps(data, indent=2))
+with open(f'output/end/ende.json', 'w') as jsonF:
+    jsonF.write(json.dumps(data, indent=2))
     data.clear()
 print('DONE!')
