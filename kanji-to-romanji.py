@@ -28,7 +28,7 @@ with open('input/text.csv', encoding='shiftjis') as csvFile:
   lines = 127353
   for row in tqdm(csvOpenedFile, total=lines):
     count = count + 1
-    roman1 = translate(row['4']) if row['4'] == '–kŠC“¹' else insert_dash(row['4'], -1)   
+    roman1 = translate(row['4']) if row['4'] == '–kŠC“¹' else insert_dash(row['4'], -2)   
     roman2 = insert_dash(row['5'], -1) 
     roman3 = translate(row['6']) 
     kana1 = row['4'] 
